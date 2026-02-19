@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AYOUB STORE | Professional</title>
+    <title>AYOUB STORE | الواجهة الرئيسية</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,6 +11,7 @@
             --accent: #00d1ff;
             --dark-bg: #050a14;
             --glass: rgba(255, 255, 255, 0.05);
+            --whatsapp: #25D366;
         }
 
         body {
@@ -28,6 +29,7 @@
             flex-direction: column;
         }
 
+        /* الهيدر */
         nav {
             padding: 20px 8%;
             display: flex;
@@ -36,85 +38,117 @@
             background: rgba(0,0,0,0.5);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo { font-size: 24px; font-weight: 900; }
+        .logo { font-size: 24px; font-weight: 900; letter-spacing: 1px; }
         .logo span { color: var(--accent); }
 
+        /* قسم الترحيب */
         .hero {
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
-            transition: all 0.6s ease;
         }
 
-        .hero h1 { font-size: clamp(40px, 8vw, 80px); font-weight: 900; margin: 0; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { color: #8a8a8e; margin: 25px auto; max-width: 600px; }
+        .hero h1 { 
+            font-size: clamp(45px, 10vw, 90px); 
+            font-weight: 900; 
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span { color: var(--primary); -webkit-text-fill-color: var(--primary); }
+        
+        .hero p { 
+            color: #8a8a8e; 
+            margin: 30px auto; 
+            max-width: 650px; 
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
 
         .btn-main {
-            padding: 18px 50px;
+            padding: 20px 60px;
             background: var(--primary);
             color: white;
             border: none;
             border-radius: 50px;
             font-weight: 900;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.4);
-            transition: 0.3s;
+            box-shadow: 0 15px 40px rgba(0, 122, 255, 0.3);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .btn-main:hover { transform: scale(1.05); background: white; color: var(--primary); }
+        .btn-main:hover { 
+            transform: scale(1.05) translateY(-5px); 
+            background: white; 
+            color: var(--primary); 
+        }
 
+        /* منطقة الخدمات */
         #services-area {
             display: none;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto 100px;
             padding: 20px;
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 30px;
-            padding: 40px;
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 35px;
+            padding: 50px 30px;
             text-align: center;
             transition: 0.4s;
         }
 
         .card:hover {
             border-color: var(--accent);
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.07);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .card i { font-size: 50px; display: block; margin-bottom: 20px; }
-        .card h3 { font-size: 22px; margin-bottom: 15px; }
-        
+        .card i { font-size: 60px; display: block; margin-bottom: 25px; filter: drop-shadow(0 5px 15px rgba(0,122,255,0.3)); }
+        .card h3 { font-size: 26px; margin-bottom: 15px; font-weight: 900; }
+        .card p { color: #a1a1a6; font-size: 0.95rem; margin-bottom: 30px; }
+
         .btn-action {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 30px;
+            padding: 12px 35px;
             background: transparent;
-            border: 1px solid var(--accent);
+            border: 2px solid var(--accent);
             color: var(--accent);
-            border-radius: 12px;
+            border-radius: 15px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             transition: 0.3s;
         }
 
-        .btn-action:hover { background: var(--accent); color: black; }
+        .btn-action:hover { 
+            background: var(--accent); 
+            color: #000; 
+            box-shadow: 0 10px 20px rgba(0, 209, 255, 0.3);
+        }
+
+        /* تأثيرات خاصة */
+        .glow-btn { border-color: var(--whatsapp); color: var(--whatsapp); }
+        .glow-btn:hover { background: var(--whatsapp); color: white; border-color: var(--whatsapp); }
+
     </style>
 </head>
 <body>
@@ -122,14 +156,14 @@
     <div class="main-wrapper">
         <nav>
             <div class="logo">AYOUB <span>STORE</span></div>
-            <div style="opacity: 0.5; font-size: 12px;">OFFICIAL PLATFORM</div>
+            <div style="opacity: 0.6; font-size: 13px; font-weight: bold;">المنصة الرسمية</div>
         </nav>
 
         <section class="hero" id="main-hero">
-            <p style="color: var(--accent); letter-spacing: 5px;">ELITE EXPERIENCE</p>
+            <p style="color: var(--accent); letter-spacing: 6px; font-weight: 900; font-size: 14px;">PREMIUM GAMING SERVICES</p>
             <h1>متجر <span>أيوب</span></h1>
-            <p>اضغط على الزر أدناه لتفعيل خدمات الشحن وبيع الحسابات بأعلى كواليتي.</p>
-            <button class="btn-main" onclick="openServices()">اكتشف القوة</button>
+            <p>وجهتكم الأولى لشحن الجواهر واقتناء أندر حسابات فري فاير في المغرب بأمان تام وسرعة فائقة.</p>
+            <button class="btn-main" onclick="openServices()">ابدأ التجربة</button>
         </section>
 
         <section id="services-area">
@@ -137,23 +171,23 @@
                 
                 <div class="card">
                     <i>💎</i>
-                    <h3>شحن الحساب</h3>
-                    <p>شحن جواهر فوري عبر ID مع ضمان الأمان.</p>
+                    <h3>شحن الجواهر</h3>
+                    <p>شحن فوري ومضمون عبر الـ ID لجميع السيرفرات بأسعار تنافسية.</p>
                     <a href="https://ayoubeshoppb1-source.github.io/ayoube-shopp/" class="btn-action">دخول المتجر</a>
                 </div>
 
                 <div class="card">
                     <i>🛒</i>
                     <h3>شراء حساب</h3>
-                    <p>تصفح أندر سكنات وحسابات فري فاير (80، 75، 72، 68، 64).</p>
-                    <a href="compt.html" class="btn-action">تصفح الآن</a>
+                    <p>استكشف تشكيلة أسطورية من الحسابات (لفل 80، 75، 72، 68، 64) مع سكنات نادرة.</p>
+                    <a href="w/compt.html" class="btn-action">تصفح المعرض</a>
                 </div>
 
                 <div class="card">
                     <i>💰</i>
-                    <h3>بيع حساب</h3>
-                    <p>نشتري حسابك فوراً بأفضل سعر في السوق المغربي.</p>
-                    <a href="https://wa.me/212727260095?text=أريد%20بيع%20حسابي" class="btn-action">تواصل معنا</a>
+                    <h3>بيع حسابك</h3>
+                    <p>هل تملك حساباً نادراً؟ نحن نشتريه منك فوراً وبأفضل سعر في السوق الحالي.</p>
+                    <a href="https://wa.me/212727260095?text=السلام%20عليكم%20أيوب،%20أريد%20بيع%20حسابي" class="btn-action glow-btn">تواصل معنا</a>
                 </div>
 
             </div>
@@ -163,11 +197,21 @@
     <script>
         function openServices() {
             const servicesArea = document.getElementById('services-area');
+            const hero = document.getElementById('main-hero');
+
+            // تفعيل عرض القسم
             servicesArea.style.display = 'block';
+            
+            // إضافة تأثير الظهور التدريجي
             setTimeout(() => {
                 servicesArea.style.opacity = '1';
                 servicesArea.style.transform = 'translateY(0)';
-                servicesArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // التمرير السلس للخدمات
+                window.scrollTo({
+                    top: servicesArea.offsetTop - 50,
+                    behavior: 'smooth'
+                });
             }, 50);
         }
     </script>
