@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYOUB STORE | الموقع الرسمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007AFF;
+            --accent: #00d1ff;
+            --dark-bg: #050a14;
+            --glass: rgba(255, 255, 255, 0.05);
+            --curve: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Tajawal', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* خلفية سينمائية متحركة خفيفة */
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 10%, #1a2a44 0%, #050a14 80%);
+            z-index: -1;
+        }
+
+        /* Navbar */
+        nav {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: sticky;
+            top: 0; z-index: 1000;
+        }
+
+        .logo { font-size: 24px; font-weight: 900; }
+        .logo span { color: var(--accent); }
+
+        /* Main Wrapper */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section (الحالة الأولى) */
+        #hero-section {
+            text-align: center;
+            padding: 100px 20px;
+            transition: all 0.8s var(--curve);
+        }
+
+        .hero-h1 { font-size: clamp(40px, 8vw, 90px); font-weight: 900; margin-bottom: 20px; }
+        .hero-h1 span { color: var(--primary); }
+        .hero-p { color: #8a8a8e; font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; margin-inline: auto; }
+
+        /* الزر المقوّد */
+        .main-btn {
+            padding: 20px 60px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 100px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 122, 255, 0.4);
+            transition: 0.4s var(--curve);
+        }
+
+        .main-btn:hover { transform: scale(1.05); background: white; color: var(--primary); box-shadow: 0 0 50px rgba(255,255,255,0.2); }
+
+        /* قسم الخدمات (الذي يظهر بعد الضغط) */
+        #services-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s var(--curve);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding-top: 50px;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 35px;
+            padding: 40px;
+            text-align: center;
+            transition: 0.5s var(--curve);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card i { font-size: 60px; display: block; margin-bottom: 20px; transition: 0.5s; }
+        .card:hover i { transform: scale(1.2) rotate(10deg); }
+
+        .card h3 { font-size: 24px; margin-bottom: 15px; }
+        .card p { color: #aaa; font-size: 15px; margin-bottom: 30px; }
+
+        .card-btn {
+            padding: 12px 30px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card-btn:hover { background: var(--accent); color: #000; }
+
+        /* إخفاء الهيرو عند التفعيل */
+        .hide-hero {
+            opacity: 0 !important;
+            transform: translateY(-50px) !important;
+            pointer-events: none;
+        }
+
+        /* إظهار الخدمات */
+        .show-services {
+            display: block !important;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <nav>
+        <div class="logo">AYOUB <span>STORE</span></div>
+        <div style="font-size: 14px; opacity: 0.6;">v2.0 Professional Edition</div>
+    </nav>
+
+    <div class="page-container">
+        
+        <section id="hero-section">
+            <p style="color: var(--accent); letter-spacing: 5px; font-weight: bold; margin-bottom: 15px;">WELCOME TO THE ELITE</p>
+            <h1 class="hero-h1">متجر <span>أيوب</span></h1>
+            <p class="hero-p">المنصة الأسرع في الشرق الأوسط لشحن خدمات فري فاير. جودة عالية، أمان مطلق، وسرعة خيالية.</p>
+            <button class="main-btn" onclick="startExperience()">اكتشف القوة</button>
+        </section>
+
+        <section id="services-section">
+            <h2 style="text-align: center; font-size: 32px; margin-bottom: 10px;">اختر خدمتك</h2>
+            <div style="width: 60px; height: 3px; background: var(--accent); margin: 0 auto 50px;"></div>
+            
+            <div class="services-grid">
+                <div class="card">
+                    <i>💎</i>
+                    <h3>شحن الحساب</h3>
+                    <p>نظام شحن مباشر عبر الـ ID. نضمن لك السرعة في التنفيذ والأمان لحسابك.</p>
+                    <button class="card-btn">ابدأ الشحن الآن</button>
+                </div>
+
+                <div class="card">
+                    <i>🛒</i>
+                    <h3>شراء حساب</h3>
+                    <p>كتالوج يضم أندر حسابات فري فاير (ساكورا، هيب هوب) موثقة بالكامل.</p>
+                    <button class="card-btn">تصفح المعرض</button>
+                </div>
+
+                <div class="card">
+                    <i>🤝</i>
+                    <h3>بيع حساب</h3>
+                    <p>هل تريد بيع حسابك؟ نحن نضمن لك أفضل سعر وسوق واسع من المشترين.</p>
+                    <button class="card-btn">قدم طلب بيع</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function startExperience() {
+            const hero = document.getElementById('hero-section');
+            const services = document.getElementById('services-section');
+
+            // 1. إخفاء الهيرو بأنيميشن ناعم
+            hero.classList.add('hide-hero');
+
+            // 2. إظهار الخدمات بعد انتهاء أنيميشن الهيرو
+            setTimeout(() => {
+                hero.style.display = 'none';
+                services.classList.add('show-services');
+            }, 600);
+        }
+    </script>
+
+</body>
+</html>
