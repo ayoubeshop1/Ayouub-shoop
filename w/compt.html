@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الحسابات | AYOUB STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050a14;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --accent: #007AFF;
+            --whatsapp: #25D366;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* رأس الصفحة */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .header h1 { font-size: 38px; margin-bottom: 10px; }
+        .header p { color: var(--accent); font-weight: bold; }
+
+        /* شبكة الحسابات */
+        .grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding-bottom: 50px;
+        }
+
+        .account-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 30px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .account-card:hover { 
+            transform: translateY(-12px); 
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* إعدادات الصورة لمنع التضبيب */
+        .img-container {
+            width: 100%;
+            background: #000;
+            line-height: 0;
+            cursor: pointer;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            image-rendering: -webkit-optimize-contrast; /* جودة عالية جداً */
+            object-fit: contain;
+        }
+
+        .details {
+            padding: 25px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .price { font-size: 32px; font-weight: 900; margin-bottom: 20px; }
+        .price small { font-size: 14px; color: var(--accent); margin-right: 5px; }
+
+        .buy-btn {
+            background: var(--whatsapp);
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            border-radius: 18px;
+            font-weight: 900;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover { background: #1eb956; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+
+        /* زر الرجوع */
+        .back-home {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="back-home">← العودة للرئيسية</a>
+
+    <div class="header">
+        <h1>معرض الحسابات</h1>
+        <p>تصفح أقوى الحسابات المتاحة حالياً</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="account-card">
+            <div class="img-container" onclick="window.open('https://i.ibb.co/mCDkdQzc/Screenshot-20260219-232113.jpg')">
+                <img src="https://i.ibb.co/mCDkdQzc/Screenshot-20260219-232113.jpg" alt="Level 80">
+            </div>
+            <div class="details">
+                <span class="badge" style="background:#6200ea">Level 80 | God Tier</span>
+                <h3>إمبراطور الأسلحة</h3>
+                <div class="price">تواصل <small>درهم</small></div>
+                <a href="https://wa.me/212727260095?text=أريد%20شراء%20الحساب%20لفل%2080" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
+
+        <div class="account-card">
+            <div class="img-container" onclick="window.open('https://i.ibb.co/mMWYD30/Picsart-26-02-19-23-29-18-933.jpg')">
+                <img src="https://i.ibb.co/mMWYD30/Picsart-26-02-19-23-29-18-933.jpg" alt="Level 72">
+            </div>
+            <div class="details">
+                <span class="badge" style="background:#00bcd4">Level 72 | Elite</span>
+                <h3>النخبة المطور</h3>
+                <div class="price">تواصل <small>درهم</small></div>
+                <a href="https://wa.me/212727260095?text=أريد%20شراء%20الحساب%20لفل%2072" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
+
+        <div class="account-card">
+            <div class="img-container" onclick="window.open('https://i.ibb.co/M5pmNtS0/Screenshot-20260219-231434.jpg')">
+                <img src="https://i.ibb.co/M5pmNtS0/Screenshot-20260219-231434.jpg" alt="Level 64">
+            </div>
+            <div class="details">
+                <span class="badge" style="background:#E91E63">Level 64 | Ultra Rare</span>
+                <h3>الأسلحة النادر</h3>
+                <div class="price">3700 <small>درهم</small></div>
+                <a href="https://wa.me/212727260095?text=أريد%20شراء%20حساب%203700%20درهم" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
+
+        <div class="account-card">
+            <div class="img-container" onclick="window.open('https://i.ibb.co/d0ksm4JQ/IMG-20260214-WA0002.jpg')">
+                <img src="https://i.ibb.co/d0ksm4JQ/IMG-20260214-WA0002.jpg" alt="Level 75">
+            </div>
+            <div class="details">
+                <span class="badge" style="background:#FFC107; color:#000">Level 75 | VIP</span>
+                <h3>حساب VIP قديم</h3>
+                <div class="price">900 <small>درهم</small></div>
+                <a href="https://wa.me/212727260095?text=أريد%20شراء%20الحساب%20لفل%2075" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
+
+        <div class="account-card">
+            <div class="img-container" onclick="window.open('https://i.ibb.co/jkBcgnXv/Picsart-26-02-15-00-01-55-594.jpg')">
+                <img src="https://i.ibb.co/jkBcgnXv/Picsart-26-02-15-00-01-55-594.jpg" alt="Level 68">
+            </div>
+            <div class="details">
+                <span class="badge" style="background:#007AFF">Level 68 | Pro</span>
+                <h3>سكنات منوعة</h3>
+                <div class="price">550 <small>درهم</small></div>
+                <a href="https://wa.me/212727260095?text=أريد%20شراء%20الحساب%20لفل%2068" class="buy-btn">شراء الآن</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
