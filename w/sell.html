@@ -4,62 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بيع حسابك | AYOUB STORE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #007AFF;
+            --dark-bg: #050a14;
+            --glass: rgba(255, 255, 255, 0.05);
+            --gold: #FFC107;
+        }
+
         body {
-            background-color: #050a14;
+            margin: 0;
+            background-color: var(--dark-bg);
             color: white;
             font-family: 'Tajawal', sans-serif;
-            margin: 0;
+            background: radial-gradient(circle at center, #1a2a44 0%, #050a14 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            padding: 40px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 35px;
             text-align: center;
         }
-        .sell-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.1);
-            max-width: 500px;
-            width: 90%;
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            text-align: right;
         }
-        h1 { color: #00d1ff; margin-bottom: 20px; }
-        p { color: #8a8a8e; line-height: 1.6; }
-        .steps { margin: 30px 0; text-align: right; }
-        .step { margin-bottom: 15px; display: flex; align-items: center; }
-        .step-n { background: #007AFF; padding: 5px 12px; border-radius: 10px; margin-left: 10px; font-weight: 900; }
-        
-        .wa-btn {
-            display: block;
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        .btn-sell {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 18px 45px;
             background: #25D366;
             color: white;
             text-decoration: none;
-            padding: 15px;
-            border-radius: 15px;
+            border-radius: 50px;
             font-weight: 900;
-            margin-top: 20px;
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
         }
-        .back { display: block; margin-top: 25px; color: #555; text-decoration: none; font-size: 14px; }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            color: #8a8a8e;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
-    <div class="sell-box">
-        <h1>بيع حسابك 💰</h1>
-        <p>نحن نشتري الحسابات النادرة والقديمة بأفضل الأسعار.</p>
-        
-        <div class="steps">
-            <div class="step"><span class="step-n">1</span> <span>صور لقطات شاشة للحساب (الخزنة والأسلحة).</span></div>
-            <div class="step"><span class="step-n">2</span> <span>أرسل الصور لنا عبر الواتساب.</span></div>
-            <div class="step"><span class="step-n">3</span> <span>استلم مبلغك فوراً بعد الاتفاق.</span></div>
+    <div class="container">
+        <h1 style="color: var(--gold);">بيع حسابك فوراً 💰</h1>
+        <div style="margin: 30px 0;">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>جهز صور الخزنة والأسلحة.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>تواصل معنا واتساب.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>اتفق على السعر واستلم كاش.</div>
+            </div>
         </div>
 
-        <a href="https://wa.me/212727260095?text=أريد%20بيع%20حسابي" class="wa-btn">تواصل معنا الآن</a>
+        <a href="https://wa.me/212727260095?text=أريد%20بيع%20حسابي" class="btn-sell">تواصل واتساب</a>
         
-        <a href="index.html" class="back">← العودة للرئيسية</a>
+        <a href="../index.html" class="back-link">← العودة للرئيسية</a>
     </div>
 
 </body>
